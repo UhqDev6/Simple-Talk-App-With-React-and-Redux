@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 function TalkReplyInput({ replyTalk }) {
-  const [text, setText] = useState('');
-  const navigate = useNavigate('/');
+  const [text, setText] = useState("");
+  const navigate = useNavigate("/");
 
   function replyTalkHandler() {
     if (text.trim()) {
       replyTalk(text);
-      setText('');
-      navigate('/');
+      setText("");
+      navigate("/");
     }
   }
 
@@ -21,13 +21,15 @@ function TalkReplyInput({ replyTalk }) {
   }
 
   return (
-    <div className="talk-reply-input">
-      <textarea type="text" placeholder="Talk your reply" value={text} onChange={handleTextChange} />
-      <p className="talk-reply-input__char-left">
+    <div className='talk-reply-input'>
+      <textarea type='text' placeholder='Talk your reply' value={text} onChange={handleTextChange} />
+      <p className='talk-reply-input__char-left'>
         <strong>{text.length}</strong>
         /320
       </p>
-      <button type="submit" onClick={replyTalkHandler}>Reply</button>
+      <button type='submit' onClick={replyTalkHandler}>
+        Reply
+      </button>
     </div>
   );
 }

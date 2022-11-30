@@ -6,14 +6,14 @@
 
 :root {
   --accent-color: #00796b;
-  --foreground-color: #0F1419;
+  --foreground-color: #0f1419;
   --background-color: white;
-  --gray-dark-color: #66757F;
+  --gray-dark-color: #66757f;
   --gray-light-color: #edeff1;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: var(--foreground-color);
   background-color: var(--background-color);
 }
@@ -28,13 +28,15 @@ body {
   top: 0;
 }
 
-.login-page, .register-page {
+.login-page,
+.register-page {
   display: grid;
   grid-template-columns: 1fr;
   min-height: 100vh;
 }
 
-.login-page__hero, .register-page__hero {
+.login-page__hero,
+.register-page__hero {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +45,8 @@ body {
   color: var(--background-color);
 }
 
-.login-page__main, .register-page__main {
+.login-page__main,
+.register-page__main {
   display: flex;
   gap: 16px;
   justify-content: center;
@@ -51,27 +54,30 @@ body {
   padding: 64px;
 }
 
-.login-page__main h2, .register-page h2 {
+.login-page__main h2,
+.register-page h2 {
   font-weight: 300;
   font-size: 48px;
 }
 
-.login-input input, .register-input input {
+.login-input input,
+.register-input input {
   display: block;
   width: 100%;
   padding: 12px 8px;
   margin: 8px 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   border-radius: 4px;
   border: 1px solid var(--gray-dark-color);
 }
 
-.login-input button, .register-input button {
+.login-input button,
+.register-input button {
   margin-top: 12px;
   width: 100%;
   padding: 12px 8px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   border: 0;
   background-color: var(--accent-color);
@@ -114,7 +120,7 @@ body {
 .navigation button {
   border: 0;
   background-color: transparent;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -198,12 +204,14 @@ body {
   cursor: pointer;
 }
 
-.talk-input, .talk-reply-input {
+.talk-input,
+.talk-reply-input {
   margin-bottom: 16px;
 }
 
-.talk-input textarea, .talk-reply-input textarea {
-  font-family: 'Open Sans', sans-serif;
+.talk-input textarea,
+.talk-reply-input textarea {
+  font-family: "Open Sans", sans-serif;
   background-color: var(--background-color);
   border-color: var(--gray-light-color);
   padding: 8px;
@@ -213,9 +221,10 @@ body {
   font-size: 15px;
 }
 
-.talk-input button, .talk-reply-input button {
+.talk-input button,
+.talk-reply-input button {
   background-color: var(--accent-color);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: var(--background-color);
   font-weight: 600;
   font-size: 15px;
@@ -225,7 +234,8 @@ body {
   cursor: pointer;
 }
 
-.talk-input__char-left, .talk-reply-input__char-left {
+.talk-input__char-left,
+.talk-reply-input__char-left {
   font-size: 15px;
   margin: 6px 0 8px 0;
   color: var(--gray-dark-color);
@@ -290,13 +300,13 @@ body {
   cursor: pointer;
 }
 
-
 .talk-reply-input {
   margin-top: 32px;
 }
 
 @media screen and (min-width: 850px) {
-  .login-page, .register-page {
+  .login-page,
+  .register-page {
     grid-template-columns: 1.25fr 1fr;
   }
 }

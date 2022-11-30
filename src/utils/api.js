@@ -1,5 +1,5 @@
 const api = (() => {
-  const BASE_URL = 'https://openspace-api.netlify.app/v1';
+  const BASE_URL = "https://openspace-api.netlify.app/v1";
 
   async function _fetchWithAuth(url, options = {}) {
     return fetch(url, {
@@ -12,18 +12,18 @@ const api = (() => {
   }
 
   function putAccessToken(token) {
-    localStorage.setItem('accessToken', token);
+    localStorage.setItem("accessToken", token);
   }
 
   function getAccessToken() {
-    return localStorage.getItem('accessToken');
+    return localStorage.getItem("accessToken");
   }
 
   async function register({ id, name, password }) {
     const response = await fetch(`${BASE_URL}/users`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         id,
@@ -35,20 +35,22 @@ const api = (() => {
     const responseJson = await response.json();
     const { status, message } = responseJson;
 
-    if (status !== 'success') {
+    if (status !== "success") {
       throw new Error(message);
     }
 
-    const { data: { user } } = responseJson;
+    const {
+      data: { user },
+    } = responseJson;
 
     return user;
   }
 
   async function login({ id, password }) {
     const response = await fetch(`${BASE_URL}/login`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         id,
@@ -60,11 +62,13 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== 'success') {
+    if (status !== "success") {
       throw new Error(message);
     }
 
-    const { data: { token } } = responseJson;
+    const {
+      data: { token },
+    } = responseJson;
 
     return token;
   }
@@ -76,11 +80,13 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== 'success') {
+    if (status !== "success") {
       throw new Error(message);
     }
 
-    const { data: { user } } = responseJson;
+    const {
+      data: { user },
+    } = responseJson;
 
     return user;
   }
@@ -92,11 +98,13 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== 'success') {
+    if (status !== "success") {
       throw new Error(message);
     }
 
-    const { data: { users } } = responseJson;
+    const {
+      data: { users },
+    } = responseJson;
 
     return users;
   }
@@ -108,11 +116,13 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== 'success') {
+    if (status !== "success") {
       throw new Error(message);
     }
 
-    const { data: { talks } } = responseJson;
+    const {
+      data: { talks },
+    } = responseJson;
 
     return talks;
   }
@@ -124,20 +134,22 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== 'success') {
+    if (status !== "success") {
       throw new Error(message);
     }
 
-    const { data: { talkDetail } } = responseJson;
+    const {
+      data: { talkDetail },
+    } = responseJson;
 
     return talkDetail;
   }
 
-  async function createTalk({ text, replyTo = '' }) {
+  async function createTalk({ text, replyTo = "" }) {
     const response = await _fetchWithAuth(`${BASE_URL}/talks`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         text,
@@ -149,20 +161,22 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== 'success') {
+    if (status !== "success") {
       throw new Error(message);
     }
 
-    const { data: { talk } } = responseJson;
+    const {
+      data: { talk },
+    } = responseJson;
 
     return talk;
   }
 
   async function toggleLikeTalk(id) {
     const response = await _fetchWithAuth(`${BASE_URL}/talks/likes`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         talkId: id,
@@ -173,7 +187,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== 'success') {
+    if (status !== "success") {
       throw new Error(message);
     }
   }

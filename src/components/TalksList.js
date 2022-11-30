@@ -1,15 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import TalkItem, { talkItemShape } from './TalkItem';
+import React from "react";
+import PropTypes from "prop-types";
+import TalkItem, { talkItemShape } from "./TalkItem";
 
 function TalksList({ talks, like }) {
   return (
-    <div className="talks-list">
-      {
-         talks.map((talk) => (
-           <TalkItem key={talk.id} {...talk} like={like} />
-         ))
-      }
+    <div className='talks-list'>
+      {talks.map((talk) => (
+        <TalkItem key={talk.id} {...talk} like={like} />
+      ))}
     </div>
   );
 }
