@@ -11,4 +11,4 @@ const authUserReducer = (authUser = null, action = {}) => {
   }
 };
 
-export { authUserReducer };
+export default authUserReducer;
