@@ -1,22 +1,28 @@
 import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import TalkInput from '../components/TalkInput';
 import TalksList from '../components/TalksList';
+import { asyncPopulateUserAndTalks } from '../states/shared/action';
+import { asyncAddTalk, asyncToggleLikeTalk } from '../states/talks/action';
 
 function HomePage() {
-  const { talks = [], users = [], authUser } = {};
+  const { talks = [], users = [], authUser } = useSelector((states) => states);
 
-  const dispatch = null; // @TODO: get dispatch function from store
+  const dispatch = useDispatch(); // @TODO: get dispatch function from store
 
   useEffect(() => {
     // @TODO: dispatch async action to populate talks and users data
+    dispatch(asyncPopulateUserAndTalks());
   }, [dispatch]);
 
   const onAddTalk = (text) => {
     // @TODO: dispatch async action to add talk
+    dispatch(asyncAddTalk({ text }));
   };
 
   const onLike = (id) => {
     // @TODO: dispatch async action to toggle like talk
+    dispatch(asyncToggleLikeTalk(id));
   };
 
   const talkList = talks.map((talk) => ({
