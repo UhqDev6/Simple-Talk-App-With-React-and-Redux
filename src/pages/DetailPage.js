@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import TalkDetail from "../components/TalkDetail";
-import TalkItem from "../components/TalkItem";
-import TalkReplyInput from "../components/TalkReplyInput";
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import TalkDetail from '../components/TalkDetail';
+import TalkItem from '../components/TalkItem';
+import TalkReplyInput from '../components/TalkReplyInput';
 
 function DetailPage() {
   const { id } = useParams();
@@ -26,9 +26,9 @@ function DetailPage() {
   }
 
   return (
-    <section className='detail-page'>
+    <section className="detail-page">
       {talkDetail.parent && (
-        <div className='detail-page__parent'>
+        <div className="detail-page__parent">
           <h3>Replying To</h3>
           <TalkItem {...talkDetail.parent} authUser={authUser.id} />
         </div>

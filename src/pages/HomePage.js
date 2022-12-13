@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import TalkInput from "../components/TalkInput";
-import TalksList from "../components/TalksList";
+import React, { useEffect } from 'react';
+import TalkInput from '../components/TalkInput';
+import TalksList from '../components/TalksList';
 
 function HomePage() {
-  const { talks = [], users = [], authUser } = {}; // @TODO: get talks, users, and authUser state from store
+  const { talks = [], users = [], authUser } = {};
 
   const dispatch = null; // @TODO: get dispatch function from store
 
@@ -26,7 +26,7 @@ function HomePage() {
   }));
 
   return (
-    <section className='home-page'>
+    <section className="home-page">
       <TalkInput addTalk={onAddTalk} />
       <TalksList talks={talkList} like={onLike} />
     </section>
