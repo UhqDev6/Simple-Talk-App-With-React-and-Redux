@@ -7,6 +7,7 @@ import { postedAt } from '../utils';
 function TalkItem({
   id, text, createdAt, likes, user, authUser, like,
 }) {
+  console.log(createdAt);
   const navigate = useNavigate();
   const isTalkLiked = likes.includes(authUser);
 

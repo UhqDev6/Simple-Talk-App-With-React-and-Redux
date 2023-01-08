@@ -124,6 +124,8 @@ const api = (() => {
       data: { talks },
     } = responseJson;
 
+    console.log(talks);
+
     return talks;
   }
 
