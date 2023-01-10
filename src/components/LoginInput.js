@@ -11,7 +11,7 @@ function LoginInput({ login }) {
       <input type="text" value={id} onChange={onIdChange} placeholder="Username" />
       <input type="password" value={password} onChange={onPasswordChange} placeholder="Password" />
       <button type="button" onClick={() => login({ id, password })}>
-        Login
+        Sign Up
       </button>
     </form>
   );
