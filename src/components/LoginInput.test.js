@@ -46,7 +46,7 @@ describe('LoginInput component', () => {
     await userEvent.type(usernameInput, 'usernametest');
     const passwordInput = await screen.getByPlaceholderText('Password');
     await userEvent.type(passwordInput, 'passwordtest');
-    const loginButton = await screen.getByRole('button', { name: 'Login' });
+    const loginButton = await screen.getByRole('button', { name: 'Sign Up' });
 
     // action
     await userEvent.click(loginButton);
